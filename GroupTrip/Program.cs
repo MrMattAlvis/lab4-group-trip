@@ -25,13 +25,19 @@ double pricePerPizza = Convert.ToDouble(Console.ReadLine());
 
 System.Console.WriteLine(" ");
 
-//Calculations for Part 1
+//Calculations for Part 1 and Part 2. Kind of just mixed themm together.
 
 const double taxRate = .18;
 
+string[] names = { "Ada", "Grace", "Alan", "Katherine" };
+int peopleGoing = names.Length;
+
+double[] hoursWorked = { 22,15, 30, 18 };
+double[] hourlyRates = { 13.50, 16.00, 11.20, 14.80 };
+
 const double slices = 8;
 double totalPizzaSlices = slices * pizza;
-double slicePerPerson = totalPizzaSlices / 4;
+double slicePerPerson = totalPizzaSlices /peopleGoing ;
 double pizzaCost = pricePerPizza * pizza;
 
 double gallonsNeeded = tripMiles / milePerGallon;
@@ -39,7 +45,8 @@ double fuelCost = FuelCost(tripMiles, milePerGallon, pricePerGallon);
 
 double tripTotal = fuelCost + pizzaCost;
 
-//Print the calculations
+double costPerPerson = tripTotal / peopleGoing;
+
 System.Console.WriteLine("=== Part 1: The Trip ===");
 System.Console.WriteLine("Fuel cost: " + fuelCost.ToString("C"));
 System.Console.WriteLine("Pizza cost: " + pizzaCost.ToString("C"));
@@ -48,17 +55,16 @@ System.Console.WriteLine(" ");
 
 //Part 2
 
-System.Console.WriteLine("=== Part 2: Pizza Party ===");
+System.Console.WriteLine("=== Part 2: The Group ===");
 
-System.Console.WriteLine(" ");
-System.Console.WriteLine("Total slices: " + totalPizzaSlices);
-System.Console.WriteLine("Slices per Person: " + slicePerPerson.ToString("F1"));
-System.Console.WriteLine("Pizza Cost: " + pizzaCost.ToString("C"));
+System.Console.WriteLine("People going: " + peopleGoing);
+System.Console.WriteLine("Slices each: "  + slicePerPerson.ToString("F1"));
+System.Console.WriteLine("Cost per person=: " + costPerPerson.ToString("C"));
 System.Console.WriteLine(" ");
 
 //Part 3
 
-System.Console.WriteLine("=== Part 3: Paycheck ===");
+System.Console.WriteLine("=== Part 3: Who Works How Long ===");
 
 System.Console.WriteLine(" ");
 
